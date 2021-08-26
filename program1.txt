@@ -1,0 +1,3 @@
+1. select m.name,s.title as songtitle,a.title as Album_title from MUSICIAN m inner join ALBUM a on a.ssn=m.ssn inner join SONG s on a.album_id=s.album_id;
+2. select m.ssn,m.name from MUSICIAN m where m.ssn not in(select m.ssn from MUSICIAN m,ALBUM a where m.ssn=a.ssn);
+3. select s.* from SONG s,PERFORM p where s.song_id=p.song_ID group by p.song_ID having count(p.song_ID)>=3;
